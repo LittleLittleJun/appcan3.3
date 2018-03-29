@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="search/css/search.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border"></div>
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="index/js/specialProduct.js"></script>
+    <script src="js/appcan.listview.js"></script>
+    <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+           specialFunction();
+        });
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thickLine",
+            hasIcon : true,
+            hasAngle : true,
+            hasSubTitle : true,
+            multiLine : 1,
+        });
+
+        //拖动刷新
+        var ind = 1;
+        function specialFunction() {
+            var num = 12;
+            special(ind,num);
+            appcan.frame.setBounce(1, function(type) {//向上拖动
+                //("开始上拖");
+            }, function(type) {
+                //("超过临界点,产生事件了！");
+            }, function(type) {
+                //("松手了,产生事件了,开始更新数据！");
+                var data=eval("("+appcan.locStorage.val("search")+")");
+                if(ind<data.totalPages){
+                    ind++;
+                    special(ind, num);
+                    appcan.frame.resetBounce(type);
+                }else{
+                    alert("往下没有啦");
+                    appcan.frame.resetBounce(type);
+                }
+                //搜索按钮、返回按钮删除缓存、、、、、
+            });
+        }
+
+    </script>
+</html>

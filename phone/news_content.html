@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="indexCon_0/css/main.css" />
+        <link rel="stylesheet" href="css/pages.css" />
+        
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div id="listview"  class="ubt bc-border news"></div>
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="index/js/news.js"></script>
+    <script src="js/appcan.listview.js"></script>
+    <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            if (appcan.locStorage.val("openNewsFlag") == '1') {
+                //$("#tit").html("前沿技术");
+                news('RecentNews');
+            }
+            if (appcan.locStorage.val("openNewsFlag") == '2') {
+                //$("#tit").html("资料中心");
+                news("InformationCenter1");
+                news("InformationCenter2");
+                news("InformationCenter3");
+            }
+            if (appcan.locStorage.val("openNewsFlag") == '3') {
+               // $("#tit").html("市场活动");
+                news("activity");
+            }
+             if (appcan.locStorage.val("openNewsFlag") == '4') {
+                //$("#tit").html("最新动态");
+                news("LatestNews");
+            }
+            
+        });
+        var lv = appcan.listview({
+            selector : "#listview",
+            type : "thinLine",
+            hasAngle : true
+        });
+    </script>
+</html>

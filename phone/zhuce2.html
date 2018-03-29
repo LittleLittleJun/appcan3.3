@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="user/css/user.css" />
+    </head>
+    <body class="um-vp " ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="uh bc-text-head ub bc-head">
+                <div class="nav-btn" id="nav-left">
+                    <div class="fa fa-angle-left fa-2x"></div>
+                </div>
+                <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">欢迎注册</h1>
+                <div class="nav-btn nav-bt" id="nav-right"></div>
+            </div>
+            <!--header结束--><!--content开始-->
+        <div id="content" class="ub-f1 tx-l">
+          <div class="ub ub-ver uinn-a1">
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1">
+                <div class="ulev-app1 umw4">
+                  姓名
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input type="text" class="ub-f1" id="name">
+                    </div>
+                </div>
+            </div>
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac">
+                <div class="ulev-app1 umw4">
+                    邮箱
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input placeholder="example@qq.com(必填)" type="text" class="ub-f1" id="email">
+                    </div>
+                </div>
+            </div>
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1">
+                <div class="ulev-app1 umw4">
+                    密码
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input placeholder="至少六位字母或数字(必填)" type="password" class="ub-f1" id="password">
+                    </div>
+                </div>
+            </div>
+            <div class="uba b-gra3 uc-a1 c-wh ub uinn-a7 ub-ac umar-at1">
+                <div class="ulev-app1 umw4 umar-r">
+                    确认密码
+                </div>
+                <div class="ub ub-ac umh5 ub-f1">
+                    <div class="uinput ub ub-f1">
+                        <input placeholder="请重复输入密码(必填)" type="password" class="ub-f1" id="password2">
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="ub ub-ver">
+                <div class="uinn-at1">
+                    <div class="btn ub ub-ac bc-text-head ub-pc bc-btn f-b"  id="zhuCe">
+                        注册
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+            <!--content结束-->
+
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.listview.js"></script>
+        <script src="user/js/user2.js"></script>
+        <script src="user/js/zhuce.js"></script>
+        <script src="shopCar/js/addToCar.js"></script>
+        <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            
+        });
+        appcan.button(".nav-btn", "btn-act", function() {
+            appcan.window.close(-1);
+        })
+    </script>
+</html>

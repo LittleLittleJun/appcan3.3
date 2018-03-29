@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="elecoupon_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="umar-a">
+            <div class="ub uinn uba uc-a1 b-ad ub-ver margin-bot">
+                <div class="ub uinn-5 ubb b-ad">
+                    <div class="ub-img price price-wh umar-a bc-text-head ub ub-ac ub-pc">
+                        <i>￥5</i>
+                    </div>
+                    <div class="b-dash umar-8"></div>
+                    <div class="ub-f1 uinn-5">
+                        <div class="t-f7 ulev-1">
+                            ZSBIO商城通用券
+                        </div>
+                        <div class="ulev-1 t-4c uinn-t5">
+                            满￥5抵￥5
+                        </div>
+                        <div class="ulev-1 t-b3">
+                            2014-02-24至2014-03-24
+                        </div>
+                    </div>
+                </div>
+                <div class="t-4c ulev-1 uinn indent clamp4 lineH" id="zhankai1">
+                    优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优...优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明
+                </div>
+                <div class="uba uc-a1 b-ad uinn marT" onclick="zhankai($('#zhankai1'))">
+                    <div class="ub-img bot-bg  bobc-text-head"></div>
+                </div>
+            </div>
+
+            <div class="ub uinn uba uc-a1 b-ad ub-ver">
+                <div class="ub uinn-5 ubb b-ad">
+                    <div class="ub-img price price-wh umar-a bc-text-head ub ub-ac ub-pc">
+                        <i>￥5</i>
+                    </div>
+                    <div class="b-dash umar-8"></div>
+                    <div class="ub-f1 uinn-5">
+                        <div class="t-f7 ulev-1">
+                            ZSBIO商城通用券
+                        </div>
+                        <div class="ulev-1 t-4c uinn-t5">
+                            满￥5抵￥5
+                        </div>
+                        <div class="ulev-1 t-b3">
+                            2014-02-24至2014-03-24
+                        </div>
+                    </div>
+                </div>
+                <div class="t-4c ulev-1 uinn indent clamp4 lineH" id="zhankai2">
+                    优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明，优...优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠 容。优惠券说明，优惠券内容。优惠券说明，优惠券内容。优惠券说明
+                </div>
+                <div class="uba uc-a1 b-ad uinn marT" onclick="zhankai($('#zhankai2'))">
+                    <div class="ub-img bot-bg  bobc-text-head"></div>
+                </div>
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+    </body>
+    <script>
+        appcan.ready(function(){
+    appcan.initBounce();
+    });
+    var iszhankai='false';
+    function zhankai(zk){
+        if (iszhankai == 'false') {
+            zk.removeClass('clamp4');
+            iszhankai = 'true';
+        } else {
+            zk.addClass('clamp4');
+            iszhankai = 'false';
+        }
+    }
+    </script>
+</html>

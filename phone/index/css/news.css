@@ -1,0 +1,22 @@
+.blhead{
+    color: #149149;text-align: center;
+}
+.textIndent{
+    text-indent:2em;
+}
+.bolds{
+    font-weight: bold;
+}
+.ziliaoTotle{
+    font-family: '微软雅黑';
+    line-height: 2em;
+    font-size: 1em;
+    margin: 0 0.5em;
+}
+/*促销（活动中心）*/
+#newsCuxiaoImg1 img{
+    display: block;
+    width: 98%;
+    margin: auto;
+}
+

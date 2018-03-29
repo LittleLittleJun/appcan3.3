@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="detail/css/detail.css">
+        <link rel="stylesheet" href="css/pages.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div>
+            <img src="images/zanwu.png" id="img"/>
+        </div>
+        <div class="de-head">
+            <span class="titName">名&nbsp;&nbsp;&nbsp;称：&nbsp;<font id="de-namee"></font></span>
+        </div>
+        <div class="de-head">
+            <span class="titName">制造商：&nbsp;<font id="manu"></font></span>
+        </div>
+
+        <div class="ub">
+            <div class="ub">
+                <div class="de-head">
+                    <span class="titName">规&nbsp;&nbsp;&nbsp;格：</span>
+                </div>
+            </div>
+            <div class="ub-f3">
+                <div class="select uba bc-border bc-text sele">
+                    <div class="text">
+                        请选择
+                    </div>
+                    <div class="icon"></div>
+                    <select selectedindex="0" id="select">
+                        <option value=0>请选择规格</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ub-f3" id="pric"></div>
+        </div>
+        <div class="de-head">
+            <span class="titName">价&nbsp;&nbsp;&nbsp;格：&nbsp;<font id="price">0.00</font></span>
+        </div>
+                <div class="ub go">
+            <div class="ub-f1 uinn umar-a" id="addToCar">
+                <div class="uinn-at1">
+                    <div class="btn ub ub-ac bc-text-head ub-pc bc-btn">
+                        加入购物车
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="de-head desc">
+            <span class="titName" style="color: #FF4500;">产品描述：</span>
+            <span id="description"></span>
+        </div>
+
+
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="detail/js/detail.js"></script>
+    <script src="shopCar/js/addToCar.js"></script>
+    <script src="user/js/user2.js"></script>
+    <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            detal_fun(appcan.locStorage.getVal("productsID"));
+            if (locGet("macAddress") == null) {
+                appcan.device.getInfo(16, function(err, data, dataType, optId) {
+                    var datamacAddress = eval("(" + data + ")")
+                    localS("macAddress", datamacAddress.macAddress);
+                })
+            }
+        });
+
+        appcan.select(".select", function(ele, value) {
+           // console.log(value);
+        });
+ </script>
+</html>

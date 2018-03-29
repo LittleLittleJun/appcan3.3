@@ -1,0 +1,22 @@
+.hisli,.nohis{
+    width:80%;
+    margin:auto;
+    height:50px;
+    border-bottom:dashed 1px #A2A8A5;
+    padding: 10px 40px;
+    outline: none;
+    border: none;
+}
+.histCont{
+    background-color: #D2E6D4;
+    height: 2em;
+}
+.histMar{
+    margin: 0.5em;
+}
+.histMar_{
+    margin-left: -0.5em;
+}
+.b-bg1{
+    background: #EEEEEE;border-radius: 8px;
+}

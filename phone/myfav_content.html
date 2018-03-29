@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="myfav_content/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="umar-a" >
+            <div id="goodsList">
+
+            </div>
+        </div>
+            <script src="js/appcan.js"></script>
+            <script src="js/appcan.control.js"></script>
+            <script src="js/appcan.listview.js"></script>
+            <script src="shopCar/js/addToCar.js"></script>
+            <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            appcan.initBounce();
+            showGoods();
+        })
+        function showGoods() {
+            if(appcan.locStorage.val('collect')!=null){
+                var data=eval("("+appcan.locStorage.val('collect')+")");          
+            var listData = [];
+            if(data.orderItem!=undefined){
+                for (var i = 0;i < data.orderItem.length; i++) {
+                //获取图片
+                getMedia(data.orderItem[i].skuId);
+                var imgUrl = appcan.locStorage.val("mediaImg")!=null? urlIP+appcan.locStorage.val("mediaImg") : "indexCon_3/css/myImg/zanwu.png" ;
+                
+                var list = {
+                    title :'名称: '+data.orderItem[i].name,
+                    icon : imgUrl,
+                    describe : '<div class="uinn-t"> 规格: '+ data.orderItem[i].orderItemAttribute[0].value + '</div>'+
+                                '<div class="sc-text-warn uinn-t">' + data.orderItem[i].retailPrice.amount + '</div>',
+                    id:data.orderItem[i].productId,
+                }
+                listData.push(list);
+                appcan.locStorage.remove("mediaImg");
+            }
+            var lv1 = appcan.listview({
+                selector : "#goodsList",
+                type : "thickLine",
+                hasIcon : true,
+                hasAngle : true,
+                hasSubTitle : false,
+                multiLine : 1,
+                hasCheckbox : false,
+                align : 'left'
+            });
+            lv1.set(listData);
+             lv1.on('click', function(ele, context, obj, subobj) {
+                appcan.locStorage.val("productsID",context.id);
+                appcan.window.open({
+                    name:'detail',
+                    data:'detail.html'
+                })
+            })
+            } else{
+                $("#goodsList").html("您还没有收藏任何产品。")
+            }   
+            }
+        }
+        
+    </script>
+</html>

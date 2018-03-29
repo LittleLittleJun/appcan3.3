@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="indexCon_3/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver">
+            <div class="ub ub-ver">
+                <div id="indexCon_3-listview1" class="ubt bc-border">
+                    <ul>
+                        <li class="ubb ub bc-border bc-text ub-ac lis" data-index="0">
+
+                            <div class="checkbox umar-r">
+                                <input type="checkbox" class="uabs ub-con" checked="true" id="chkYN">
+                            </div>
+
+                            <div class="lv_title ub-f1 marg-l ub ub-ver ut-m line1">
+                                <div class="ub">
+                                    <div>
+                                        <label for="chkYN">选择购物车的所有产品</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="shopCarlist">
+
+                </div>
+
+            </div>
+            <div class="ub ub-ac ub-ver uinn-a1 ub-pe" id="totleMoney">
+                <div class="ub-f1 ub-pe tx-r ub">
+                    <span class="t-gra5 ulev-4">合计：</span>
+                    <span class="sc-text-warn ufm1 ulev-app1"> <span>￥</span><span id="AllPrice"></span> </span>
+                </div>
+                <div class="ub-f1 ub-pe tx-r ub">
+                    <span class="t-gra5 ulev-4 zhekoujia"></span>
+                    <span class="sc-text-warn ufm1 ulev-app1"><span id="AllPrice2"></span> </span>
+                </div>
+            </div>
+            <div class="ub ub-pe uinn umar-a" id="disAndPay">
+                <div class="ub ub-f1 ulev">
+                    <input type="search" placeholder="优惠券编码" value="CX001" id='code'/>
+                    <button class="coded" style="font-size: 1em">验证</button>
+                </div>
+                <div class="uinn-at1">
+                    <div class="btn ub ub-ac bc-text-head ub-pc bc-btn" id="toPay">
+                        去结算
+                    </div>
+                </div>
+            </div>
+        </div>                  
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.listview.js"></script>
+        <script src="shopCar/js/shopCar.js"></script>
+        <script src="shopCar/js/addToCar.js"></script>
+        <script src="allOrders/js/discounts.js"></script>
+        <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            var data = eval("(" + appcan.locStorage.val("datadenglu") + ")");
+            if (data != null) {
+                var customerId = data.id;
+            } else if (appcan.locStorage.getVal("temporaryId") != undefined) {
+                var customerId = appcan.locStorage.getVal("temporaryId");
+            } else {
+                addNewCar();
+                var customerId = appcan.locStorage.getVal("temporaryId");
+            }
+            shopCarPro(customerId);
+            
+            //添加折扣
+            $(".coded").bind("click", function() {
+                //添加折扣之前先删除其他的所有折扣
+                deletAllDiscount(customerId);
+                addDiscount($("#code").val(), customerId);
+            })
+            //删除折扣
+            //deletAllDiscount(customerId);
+            //deletDiscount('CX001', customerId);
+            $("#code").bind("change",function(){
+            if($(this).val()==''){
+                deletAllDiscount(customerId);
+                appcan.locStorage.remove("discount");
+                location.reload();
+            }
+        })
+        });
+        $("#toPay").bind("click", function() {
+            appcan.window.open("order", "order.html");
+        })
+        
+    </script>
+</html>

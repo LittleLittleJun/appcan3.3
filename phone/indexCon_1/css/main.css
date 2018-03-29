@@ -1,0 +1,87 @@
+.listOne{
+    height: 2em;line-height: 2em;
+    margin-left: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
+.listOne span{
+    display:inline-block;
+    height:2em;
+    /*background: #D7D2D2;*/
+    border-radius: 0.2em;
+    color: #06803B;
+}
+.listTwo{
+    margin-left: 3.5em;
+    font-size: 1em;
+}
+.listThree{
+     margin-left: 2em;
+    font-size: 1em;
+}
+.listThree li{
+    list-style:circle;
+    height: 1.8em;line-height: 1.8em;
+    border-bottom: dashed 1px green;
+}
+.listTwo li{
+    height: 1.8em;line-height: 1.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.listLi{
+     list-style: disc;
+}
+.listTwo li:hover{
+    color:#06803B; 
+}
+.proli:hover{
+    color:green;
+}
+.proli{
+    padding-left:14%;line-height:1.8em;
+}
+.proCentLi:hover{
+    color:green;
+}
+#cpzxList li{
+    margin-left: 8%;
+    line-height: 2em;
+}
+#cpzxList li img{
+    display: inline-block;
+    margin-right: 10px;
+}
+.proCentLi{
+    display:inline-block;
+    background-color:#CFCACA;
+    margin-bottom: 5px;
+}
+.c-head{
+    width:90%;
+    height:2.5em;
+    color: #06803B;
+    font-weight:bold;
+    line-height:2.5em;
+    background-color:#D7D2D2;
+    margin-top: 5px;
+    font-size:1em;
+    padding: 0.3px 5%;
+    font-family: "微软雅黑";
+    margin-top: 0.2em;
+}
+.b-gra{
+	border-color:#d6d6d6;
+}
+.t-gra
+{
+	color:#a1a1a1;
+}
+.t-gra1{
+	color:#787878;
+}
+.umwh1{
+	min-height:3.31em;
+	min-width:3.78em;
+}

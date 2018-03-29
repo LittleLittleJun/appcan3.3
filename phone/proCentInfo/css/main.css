@@ -1,0 +1,104 @@
+#pciP{
+    text-indent:2em;padding-left: 3%;
+}
+.aui-ellipsis-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.bc-text{
+    color: #FF6805;
+}
+#listview .ub-f1 .ulev-1{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    max-height: 4.3em;
+}
+.bianhao{
+    margin:0px -6px;
+    padding: 7px 7px;
+    margin-bottom: -6px;
+    background-color: #007100;
+    color: #C1D117;
+    border-right: dashed 1px #6DAA16;
+}
+.miaoshu{
+    width: 120%;
+    word-break:break-all;
+    max-height: 5.1em;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.bid,.mingcheng,.shuoming{
+    width: 105%;
+     max-height: 5.1em;
+     word-break:break-all;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.dt_li{
+    max-height: 5.1em;
+    word-break:break-all;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    text-align: center;
+}
+.dt_li img{
+    width:2em;height: 1.5em;
+}
+.dt_li2{
+     max-height: 5.1em;
+     word-break:break-all;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    text-align: right;
+}
+.proImg{
+    width:300px;
+    height:30s0px;
+    margin:10px 0px 10px 30px;
+}
+.pcI{
+    color: #135836;
+    font-weight: bold;
+    padding-left: 3%;
+    padding-left: 3%;
+    margin: 10px 0px;
+}
+#pcI_ul li{
+    padding-left: 3%;
+    text-indent:2em;
+    line-height: 50px;
+}
+.proLis1{
+    background:#00944A;
+    position:relative;
+    line-height: 35px;
+    text-align: center;
+    color: white;
+    -webkit-box-flex:2;
+    border-right: 1px dashed #6DAA16;
+}
+.proListHead{
+    display:-webkit-box;
+    width:100%;
+    height:2.5em;
+    margin-top: 5px;
+    font-size: 0.9em;
+    line-height:2.5em;
+}
+.proin{
+    position:absolute;
+    width:100%;
+    line-height:2.5em;
+}
+

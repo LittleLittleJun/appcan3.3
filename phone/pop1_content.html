@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="pop/css/pop.css"/>
+    </head>
+    <body class="um-vp bc-bg bg" ontouchstart>
+        <div id='screenDiv'>
+            <div class="ub ub-f2 ub-ac bor pop1head">
+                <div class="nav-btn left_btn" onclick="appcan.window.closePopover('pop1')">
+                    <div class="fa fa-angle-left fa-2x back_l"></div>
+                </div>
+                <div class="ub-f1 ub-ac ub-pc auto">
+                    筛选
+                </div>
+                <div class="nav-btn left_btn" onclick="reset ()">
+                      <div style="color: #FF6504;font-weight: bold">重置</div>    
+                </div>
+            </div>
+            <div id="field">
+
+            </div>
+        </div>
+
+    </body>
+    <script src="js/appcan.js"></script>
+    <script src="js/appcan.control.js"></script>
+    <script src="js/index.js"></script>
+    <script src="search/js/search.js"></script>
+    <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            var data = eval("(" + appcan.locStorage.val("search") + ")");
+            if (data.searchFacet != null) {
+                for (var i = 0; i < data.searchFacet.length; i++) {
+                    var html = '<div class="solid">' + data.searchFacet[i].fieldName + '</div>'
+                    $("#field").append(html);
+                    $(".solid").eq(i).bind("click", function() {
+                        $(".solid").eq(i).css({
+                            color : "orange"
+                        });
+                    })
+                    for (var j = 0; j < data.searchFacet[i].values.length; j++) {
+                        if (data.searchFacet[i].values[j].quantity != 0) {
+                            var val2 = '<div class="cent" data-index=' + i + '>' + data.searchFacet[i].values[j].value + '</div>'
+                            $(".solid").eq(i).after(val2);
+                        }
+                    }
+                }
+            }
+
+            $("#field .cent").each(function(i) {
+                $(".cent").eq(i).bind("click", function() {
+                    var str = $(".solid").eq($(this).attr("data-index")).html() + "=" + $(this).html();
+                    appcan.locStorage.val("str", str);
+                    $(".cent").eq(i).css({
+                        color : "orange"
+                    });
+                    appcan.window.open({
+                        name : "search",
+                        data : "search.html"
+                    });
+                    appcan.window.evaluatePopoverScript({
+                        name : 'search',
+                        popName : 'content',
+                        scriptContent : 'screen()'
+                    });
+                    appcan.window.closePopover('pop1');
+                })
+            })
+        });
+        function reset () {
+            appcan.window.closePopover('pop1');
+            appcan.locStorage.remove("str");
+            appcan.locStorage.remove('pricesc');
+            appcan.window.evaluatePopoverScript({
+                        name : 'search',
+                        popName : 'content',
+                        scriptContent : 'screen()'
+                    });
+        }
+        
+        
+          $(".btn1").click(function(){
+  $("p").toggle(1000);
+  });
+  
+  
+    </script>
+</html>

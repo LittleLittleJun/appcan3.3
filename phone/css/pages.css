@@ -1,0 +1,355 @@
+*{
+    font-family: "Microsoft Yahei", "微软雅黑", "Pinghei";
+}
+h3 {
+    text-align: center;
+    font-size: 1em;
+    line-height:1.8em;
+    color: #00944A;
+}
+span#description h2 {
+    font-size: 1em;
+    font-weight: 400;
+}
+#description table {
+    text-indent: 0;
+    margin-bottom: 3em;
+}
+#description table tr td {
+    border: solid 1px #F0F0F0 !important;
+}
+#description table tr td:nth-child(1) {
+    width: 5.5em !important;
+    text-align: center;
+}
+div#newsdetail ul li {
+    list-style: inherit;
+    margin-left: 1.2em;
+    list-style-type: square;
+}
+p.p_nbsp a{
+    font-size: 1.5em;
+}
+table#NordiQC a{
+    font-size: 2em;
+}
+div#newsdetail .lineheight25 ul li a,div#newsdetail ul li a{
+    color: #080808;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-decoration: none;
+    padding: 0 0.5em;
+   /* display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;*/
+}
+div#newsdetail {
+padding: 0px 0.5em;
+}
+p.p_nbsp a{
+    color: #080808;
+    font-size: 1em;
+    line-height: 1.8em;
+    text-decoration: none;
+}
+div#newsdetail .lineheight25 ul li a:hover,p.p_nbsp a:hover,div#newsdetail ul li a:hover{
+    color: #00944A;
+}
+.width56{
+    width:560px;
+}
+.mid_col{
+    font-size:15px;
+}
+.p_nbsp {
+    text-indent: 1em;
+}
+.textCenter{
+    text-align: center;
+}
+.autoImg{
+    display:block;
+    margin:auto;
+}
+.bold{
+    font-weight: bold;
+    color: #D06D08;
+}
+.lineheight25{
+    line-height: 1.5em;
+}
+.font15{
+    font-size: 1em;
+}
+li.questionLi a {
+    display: block;
+  /*  width: 276px;*/
+    width:100%;
+    background: #F8F4F4;
+    padding: 3px 5px;
+    text-decoration: none;
+}
+#question {
+    margin: auto;
+    font-size: 15px;
+}
+
+li.questionLi:hover a {
+    color: #1E964C;
+    text-decoration:underline;
+}
+ .hoverGreen a:hover{
+ color: #1E964C;
+    text-decoration:underline;
+ }
+#questionTable {
+    border: solid 1px #A3A3A3;
+}
+
+#question #questionTable td {
+    padding: 8px;
+}
+.mid_col h3 {
+    font-size: 2.5em;
+}
+
+.mid_col h4 {
+    color: #F97308;
+    padding: 5px;
+    margin: 0px;
+    font-size: 16px;
+}
+ul.wenjian {
+    font-size: 15px;
+}
+#question img {
+    padding: 0px 8px;
+}
+
+#question ul {
+    margin: 0px;
+}
+
+#question ul li {
+    padding: 4px 0px;
+}
+
+.answer {
+    padding: 5px 0px;
+    line-height: 24px;
+    display: none;
+}
+
+.mid_col a {
+    color: #504F4F;
+}
+
+div#question ul li a:hover {
+    color: #00944A;
+}
+
+/*资料中心*/
+#NordiQC img {
+    width: 18em;
+    height: 12em;
+    margin: 1.3em;
+}
+
+#NordiQC {
+    padding: 0.5em;
+    margin:auto;
+}
+
+#NordiQC td {
+    vertical-align: middle;
+}
+
+#NordiQC tr {
+    float: left;
+    width: 32em;
+    height: 15em;
+    margin: 10px 15px;
+    background: #F5F6F5;
+    border: solid 1px #ccc;
+}
+
+#NordiQC tr:hover {
+    background: #F3F3F3;
+    -webkit-box-shadow: 0 0 10px #8CBFA8;
+    -moz-box-shadow: 0 0 10px #8CBFA8;
+    box-shadow: 0 0 10px #8CBFA8;
+}
+#newsFlash tr:hover{
+    background: #F3F3F3;
+    -webkit-box-shadow: 0 0 10px #8CBFA8;
+    -moz-box-shadow: 0 0 10px #8CBFA8;
+    box-shadow: 0 0 10px #8CBFA8;
+}
+#NordiQC tr:hover td a {
+    color: #F08632;
+    text-decoration: underline;
+}
+/*常用文件*/
+ul.wenjian li {
+    line-height: 27px;
+}
+.introduce {
+    font-size: 15px;
+    line-height: 30px;
+}
+.addToUs h4{
+    padding-left:0px;
+}
+
+.meeting h4 {
+    color: #00944A;
+}
+
+.meetingCj{
+    width: 175px;
+    height:135px;
+    margin:8px;;
+}
+
+.meetingCj2{
+    width: 260px;
+    height: 170px;
+    margin: 15px;
+}
+.imgTextCent{
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+ .mid-width{
+   /* width: 590px;;*/
+    margin: auto;
+}
+#EBER_table td,#FISH td{
+    padding-left:10px;
+    padding-right:35px;
+}
+.listCircle li{
+            list-style-type:circle;
+        }
+.colorGreen{
+    color:#00944A;
+}
+.colorGreen a {
+    color: #00944A !important;
+}
+.alk_imgW1{
+    width:5em;
+}
+.alk_img2 img{
+     width: 150px;
+ }
+ .AlkTable td{
+ padding:5px;
+ vertical-align:middle;
+ }
+ .FISH_table td{
+  padding:10px;
+ vertical-align:middle;
+ }
+.AlkTable  {
+ border-color: #A3A3A3;
+ }
+ table.FISH_table td {
+    border: solid 1px #EFB98D;
+}
+ .FISH_table,table#HPV_table{
+    -webkit-box-shadow: 0 0 10px #8CBFA8;
+    -moz-box-shadow: 0 0 10px #8CBFA8;
+    box-shadow: 0 0 10px #EABE9B;
+}
+table#HPV_table td {
+    padding: 5px 8px;
+}
+table#HPV_table{
+    margin:auto;
+}
+table#HPV_table td{
+ border: solid 1px #EFB98D;
+}
+table#RNAscope_table td {
+    padding: 5px 8px;
+    border: solid 1px #A3A3A3;
+}
+.imgTextSize{
+    font-size:12px;
+    line-height:20px;
+}
+  #newsFlash tr{
+            float: left;
+            margin: 10px 15px;
+            background: #F5F6F5;
+            border: solid 1px #ccc;
+        }
+        #newsFlash .flashImgTd{
+            width: 163px;
+            height: 220px;
+        }
+        #newsFlash tr img{
+            width: 140px;
+            height: 190px;
+        }
+        #newsFlash td{
+            min-width: 90px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        #newsFlash{
+            width: 580px;
+            margin: auto;
+        }
+        
+        .UMAB107 {
+            width: 80%;
+            margin: auto;
+            border: solid 5px #ED6002;
+            padding: 3px;
+            color: white;
+        }
+
+        .UMAB107 table {
+            width: 100%;
+            background: #ED6002;
+        }
+
+        .UMAB107 table tr td:nth-child(1) {
+            text-align: right;
+            padding-right: 8px;;
+        }
+
+        .UMAB107 table tr td:nth-child(2) {
+            text-align: left;
+            padding-left: 8px;
+        }
+
+        .proliferation {
+            margin: auto;
+            width: 80%;
+        }
+
+        .proliferation td {
+            padding: 2px 7px;
+        }
+
+        .proliferation tr:nth-child(1) {
+            background-color: #D6D6D6;
+        }
+
+        .QcUl {
+            margin-left: 8px;;
+        }
+
+        .greenJian {
+            width: 100%;
+            margin: auto;
+            height: 9px;
+            border-top: solid 3px #2F9523;
+            border-bottom: solid 3px #2F9523;
+        }

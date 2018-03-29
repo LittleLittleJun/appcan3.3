@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" href="css/ui-base.css">
+        <link rel="stylesheet" href="css/ui-color.css">
+        <link rel="stylesheet" href="css/appcan.icon.css">
+        <link rel="stylesheet" href="css/appcan.control.css">
+        <link rel="stylesheet" href="indexCon_2/css/main.css">
+    </head>
+    <body class="um-vp bc-bg" ontouchstart>
+        <div class="ub ub-ver">
+            <div class="ub-img1 perBg uh-per1 ub-fh ub ub-ver">
+
+                <div class="uinn-a1 ub ub-f1" id="user">
+                    <div class="uwh-per2 uc-a-per1 bc-bg ub ub-ac ub-pc uinn-a16">
+                        <div class="ub-fh ub-fv  ub-img setImg1 uc-a-per2"></div>
+                    </div>
+                    <div class="ub-f1 umar-at1 umar-l-per1 ub ub-ver">
+                        <div class="ub ">
+                            <div class="umar-ar3 bc-text-head">
+                                账户:<span id="userEmail"></span>
+                            </div>
+                        </div>
+                        <div class="t-wh2 umar-t ub-f1">
+                            用户名:<span id="userName"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ub c-wh-per uinn-a11 ub-ae">
+                    <div class="ub ub-ver ub-f1 ub-pc ubr b-gra-per">
+                        <div class="t-gra5 ulev-4 tx-c ub-f1">
+                            待付款
+                        </div>
+                        <div class="ub-ae sc-text-warn ufm1 tx-c">
+                            2
+                        </div>
+                    </div>
+                    <div class="ub ub-ver ub-f1 ub-pc ubr b-gra-per">
+                        <div class="t-gra5 ulev-4 tx-c ub-f1">
+                            待发货
+                        </div>
+                        <div class="ub-ae t-gra5 ufm1 tx-c">
+                            0
+                        </div>
+                    </div>
+                    <div class="ub ub-ver ub-f1 ub-pc ubr b-gra-per">
+                        <div class="t-gra5 ulev-4 tx-c ub-f1">
+                            待收货
+                        </div>
+                        <div class="ub-ae sc-text-warn ufm1 tx-c">
+                            2
+                        </div>
+                    </div>
+                    <div class="ub ub-ver ub-f1 ub-pc ubr b-gra-per">
+                        <div class="t-gra5 ulev-4 tx-c ub-f1">
+                            待评价
+                        </div>
+                        <div class="ub-ae t-gra5 ufm1 tx-c">
+                            0
+                        </div>
+                    </div>
+                    <div class="ub ub-ver ub-f1 ub-pc">
+                        <div class="t-gra5 ulev-4 tx-c ub-f1">
+                            退款
+                        </div>
+                        <div class="ub-ae sc-text-warn ufm1 tx-c">
+                            2
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ub-f1 ub ub-ver">
+                <div id="indexCon_2-listview1"  class="ubt bc-border c-wh">
+
+                </div>
+                <div id="indexCon_2-listview3"  class="ubt bc-border c-wh umar-at1">
+
+                </div>
+                <div id="indexCon_2-listview2"  class="ubt bc-border c-wh umar-at1">
+
+                </div>
+                <div id="indexCon_2-listview7"  class="ubt bc-border c-wh umar-at1">
+
+                </div>
+                <div id="indexCon_2-listview5"  class="ubt bc-border c-wh umar-at1">
+
+                </div>
+                <div id="indexCon_2-listview6"  class="ubt bc-border c-wh umar-at1">
+
+                </div>
+                <div id="indexCon_2-listview4"  class="ubt bc-border c-wh umar-at1">
+
+                </div>
+            </div>
+        </div>
+        <script src="js/appcan.js"></script>
+        <script src="js/appcan.control.js"></script>
+        <script src="js/appcan.listview.js"></script>
+        <script src="indexCon_2/js/indexCon2.js"></script>
+        <script src="order/js/order.js"></script>
+        <script src="shopCar/js/addToCar.js"></script>
+        <script src="js/public.js"></script>
+    </body>
+    <script>
+        appcan.ready(function() {
+            initInfo();
+            var lv1 = appcan.listview({
+                selector : "#indexCon_2-listview1",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : true,
+                multiLine : 1
+            });
+            lv1.set([{
+                title : '全部订单',
+                subTitle : '查看我的订单'
+            }]);
+            lv1.on('click', function(ele, context, obj, subobj) {
+                //判断用户ID
+                var data = eval("(" + appcan.locStorage.val("datadenglu") + ")");
+                if (data != null) {
+                    var customerId = data.id;
+                    appcan.openWinWithUrl('allOrders', 'allOrders.html');
+                    //订单列表
+                    orderList(customerId);
+                } else {
+                    alert("您没有登录");
+                }
+            })
+            var lv2 = appcan.listview({
+                selector : "#indexCon_2-listview2",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : true,
+                multiLine : 1
+            });
+            lv2.set([{
+                title : '我的优惠信息',
+                subTitle : '卡券优惠乐不停',
+                name : "elecoupon"
+            }]);
+            lv2.on('click', function(ele, context, obj, subobj) {
+                if (context.name == "elecoupon") {
+                    appcan.openWinWithUrl(context.name, context.name + '.html');
+                }
+            })
+            var lv3 = appcan.listview({
+                selector : "#indexCon_2-listview3",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : false,
+                multiLine : 1
+            });
+            lv3.set([{
+                title : '宝贝收藏',
+                name : "myfav"
+            }]);
+            lv3.on('click', function(ele, context, obj, subobj) {
+                if (context.name == "myfav") {
+                    var data = eval("(" + appcan.locStorage.val("datadenglu") + ")");
+                    if (data != null) {
+                        var customerId = data.id;
+                    } else if (appcan.locStorage.getVal("temporaryId") != undefined) {
+                        var customerId = appcan.locStorage.getVal("temporaryId");
+                    } else {
+                        addNewCar();
+                        var customerId = appcan.locStorage.getVal("temporaryId");
+                    }
+                    collectList(customerId);
+                    appcan.openWinWithUrl(context.name, context.name + '.html');
+                }
+            })
+            var lv4 = appcan.listview({
+                selector : "#indexCon_2-listview4",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : false,
+                multiLine : 1
+            });
+            lv4.set([{
+                title : '退出登录'
+            }]);
+            lv4.on('click', function(ele, context, obj, subobj) {
+                appcan.locStorage.remove("datadenglu");
+                appcan.locStorage.remove('userInfo');
+                location.reload();
+            })
+            var lv5 = appcan.listview({
+                selector : "#indexCon_2-listview5",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : false,
+                multiLine : 1
+            });
+            lv5.set([{
+                title : '修改密码',
+                name : "changepassword"
+            }]);
+            lv5.on('click', function(ele, context, obj, subobj) {
+                if (context.name == "changepassword") {
+                    // appcan.openWinWithUrl(context.name, context.name + '.html');
+                    appcan.window.open({
+                        name : 'changepassword',
+                        data : 'changepassword.html'
+                    })
+                }
+            })
+            var lv6 = appcan.listview({
+                selector : "#indexCon_2-listview6",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : false,
+                multiLine : 1
+            });
+            lv6.set([{
+                title : '修改信息',
+                name : "changInfo"
+            }]);
+            lv6.on('click', function(ele, context, obj, subobj) {
+                if (context.name == "changInfo") {
+                    appcan.openWinWithUrl(context.name, context.name + '.html');
+                }
+            })
+            var lv7 = appcan.listview({
+                selector : "#indexCon_2-listview7",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : false,
+                multiLine : 1
+            });
+             var lv7 = appcan.listview({
+                selector : "#indexCon_2-listview7",
+                type : "thinLine",
+                hasIcon : false,
+                hasAngle : true,
+                hasSubTitle : false,
+                multiLine : 1
+            });
+            lv7.set([{
+                title : '我的地址'
+            }]);
+            lv7.on('click', function(ele, context, obj, subobj) {
+                appcan.window.open({
+                        name : 'address',
+                        data : 'address.html'
+                    })
+            })
+        })
+        function initInfo() {//初始化用户信息，登录时、修改信息时、未登陆时
+            var data = eval("(" + appcan.locStorage.val("datadenglu") + ")");
+            if (appcan.locStorage.val('userInfo') != null) {
+                var d = eval("(" + appcan.locStorage.val('userInfo') + ")");
+                //console.log(d.emailAddress+d.firstName + d.lastName)
+                $("#userEmail").html(d.emailAddress);
+                $("#userName").html(d.firstName);
+            } else if (data != null) {
+                $("#userEmail").html(data.emailAddress);
+                $("#userName").html(data.firstName);
+            } else {
+                $("#userEmail").html('');
+                $("#userName").html('');
+                appcan.window.open({
+                    name : 'denglu',
+                    data : 'denglu.html'
+                })
+            }
+
+        }
+    </script>
+</html>
